@@ -1,0 +1,146 @@
+/* ---------------------------------------------------
+    SIDEBAR STYLE
+----------------------------------------------------- */
+
+.wrapper {
+    display: flex;
+    align-items: stretch;
+}
+
+#collapse-button {
+    padding: 15px 10px;
+}
+
+button[id="sidebarCollapse"] {
+    height: 40px;
+    width: 100%;
+    color: $color-white;
+    background-color: $color1;
+    border-color: $color1;
+    &:hover {
+        height: 40px;
+        color: $color-white;
+        background-color: $color1;
+        border-color: $color1;
+    }
+}
+
+.btn-check:focus+.btn-info,
+.btn-info:focus {
+    color: #fff !important;
+    background-color: $color1 !important;
+    border-color: $color1 !important;
+    box-shadow: 0 0 0 0 !important;
+}
+
+#sidebar {
+    min-width: 250px;
+    max-width: 250px;
+    height: 100vh;
+    position: sticky;
+    align-self: flex-start;
+    top: 0px;
+    left: 0px;
+    background: $color1;
+    color: $color-white;
+    transition: all 0.3s;
+    &.active {
+        min-width: 80px;
+        max-width: 80px;
+        text-align: center;
+        .sidebar-header h3,
+        .CTAs {
+            display: none;
+        }
+        .sidebar-header strong {
+            display: block;
+        }
+        ul li a {
+            padding: 20px 10px;
+            text-align: center;
+            font-size: 0.85em;
+            i {
+                margin-right: 0;
+                display: block;
+                font-size: 1.8em;
+                margin-bottom: 5px;
+            }
+        }
+    }
+    ul li a {
+        text-align: left;
+    }
+}
+
+#sidebar.active ul ul a {
+    padding: 10px !important;
+}
+
+#sidebar.active .dropdown-toggle::after {
+    top: auto;
+    bottom: 10px;
+    right: 50%;
+    -webkit-transform: translateX(50%);
+    -ms-transform: translateX(50%);
+    transform: translateX(50%);
+}
+
+#sidebar .sidebar-header {
+    padding: 20px;
+    background: $color2;
+}
+
+#sidebar .sidebar-header strong {
+    display: none;
+    font-size: 1.8em;
+}
+
+#sidebar ul.components {
+    padding: 0 0 20px 0;
+    border-bottom: 1px solid #47748b;
+}
+
+#sidebar ul li a {
+    padding: 10px;
+    font-size: 1.1em;
+    display: block;
+}
+
+#sidebar ul li a:hover {
+    color: $color1;
+    background: $color-white;
+}
+
+#sidebar ul li a i {
+    margin-right: 10px;
+}
+
+#sidebar ul li.active>a,
+a[aria-expanded="true"] {
+    color: $color-white;
+    // background: $color2;
+    background: $sidebar-active-color;
+}
+
+ul.CTAs {
+    padding: 20px;
+}
+
+ul.CTAs a {
+    text-align: center;
+    font-size: 0.9em !important;
+    display: block;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+a.article,
+a.article:hover {
+    background: $color2;
+    color: $color-warning;
+}
+
+a.download {
+    background: $color-white;
+    color: $color1;
+}

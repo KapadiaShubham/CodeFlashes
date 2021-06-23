@@ -1,0 +1,32 @@
+.left {
+    background-color: $menuBGColor;
+    flex: 20%;
+    position: sticky;
+    align-self: flex-start;
+    padding: 15px 0;
+    h4 {
+        padding-left: 0.5rem;
+        text-align: center;
+    }
+}
+
+
+/* Style the navigation menu inside the left column */
+
+#myMenu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#myMenu li a {
+    padding: 12px;
+    text-decoration: none;
+    color: $menuColor;
+    display: block
+}
+
+#myMenu li a:hover {
+    background-color: $menuHoverBGColor;
+    color: $menuHoverColor;
+}

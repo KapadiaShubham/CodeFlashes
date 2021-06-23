@@ -1,0 +1,21 @@
+.post {
+    p {
+        color: black;
+        // display: inline-block;
+    }
+    .flex {
+        display: flex;
+        .leftFlex-80 {
+            flex: 80%;
+        }
+        .rightFlex-20 {
+            flex: 20%;
+        }
+        .leftFlex-75 {
+            flex: 75%;
+        }
+        .rightFlex-25 {
+            flex: 25%;
+        }
+    }
+}

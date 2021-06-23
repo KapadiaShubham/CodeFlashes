@@ -1,0 +1,58 @@
+table.wikitable {
+    margin: 1em 0;
+    background-color: #f9f9f9;
+    border: 1px #aaa solid;
+    border-collapse: collapse;
+    color: black;
+}
+
+code,
+table {
+    background-color: transparent;
+}
+
+table {
+    font-size: 100%;
+}
+
+table {
+    display: table;
+    border-collapse: separate;
+    box-sizing: border-box;
+    text-indent: initial;
+    border-spacing: 2px;
+    border-color: grey;
+}
+
+#ascii-table {
+    tbody,
+    td,
+    tfoot,
+    th,
+    thead,
+    tr {
+        border-color: inherit;
+        border-style: solid;
+        border-width: 1px;
+    }
+}
+
+.dec-element {
+    color: white;
+    // background-color: black;
+}
+
+.oct-element {
+    color: white;
+    // background-color: black;
+}
+
+.hex-element {
+    color: white;
+    // background-color: black;
+}
+
+.ch-element {
+    color: white;
+    // background-color: black;
+}
