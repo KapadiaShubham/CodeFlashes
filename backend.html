@@ -158,6 +158,9 @@ images/ccpp2.jpeg
 
             <ul class="list-unstyled CTAs">
                 <li>
+                    <a href="https://github.com/KapadiaShubham/CodeFlashes" class="article"><i class="fab fa-github"></i>GitHub Repo</a>
+                </li>
+                <li>
                     <a href="https://bootstrapious.com/tutorial/files/sidebar.zip" class="download">Download source</a>
                 </li>
                 <li>
@@ -207,15 +210,82 @@ images/ccpp2.jpeg
             </nav>
             <div class="Mycontainer">
                 <!-- Main Content -->
-
+                <h2></h2>
                 <div class="main-content">
-                    <pre>
-                        <code class="language-javascript">
-                            <code class="language-php">
-                                BackEnd: PHP / NodeJS
+                    <h2>Actually this is Frontend JS :) </h2>
+                    <div id="getting-an-element" class="post">
+                        <h2> Getting an Element</h2>
+                        <pre>
+                            <code class="language-javascript">
+                                document.getElementById('id');
+                                document.getElementsbyClassName('className');
+                                document.getElementsByTagName('tag');
+                                document.querySelector('.class or #id');
+                                document.querySelectorAll('.class or #id');
+                                document....something....('').children[0].innerHTML;  // This is the first list item
                             </code>
-                        </code>
-                    </pre>
+                        </pre>
+                    </div>
+                    <div id="create-element-and-attribute" class="post">
+                        <h2> Creating an Element and/or its Attribute</h2>
+                        <pre>
+                            <code class="language-javascript">
+                                var p = document.createElement('p'); // &lt;p&gt;&lt;/p&gt;
+                                p.innerText = 'this is the created element'; // &lt;p&gt;this is the created element&lt;/p&gt;
+                                document.body.appendChild(p); // will add it at the end of its body
+    
+                                // Now creating its attribute
+                                var att = document.createAttribute('id');
+                                att.value = 'created';
+                                p.setAttributeNode(att); // sets it for the p-tag above created
+                            </code>
+                        </pre>
+                    </div>
+                    <div id="get-elements-by-attribute" class="post">
+                        <h2> Write a code to <span class="text-danger"><code>getElementsByAttribute();</code></span></h2>
+                        <pre>
+                            <code class="language-javascript">
+                                // Suggested Steps
+                                // 1. Get all the elements in the DOM
+                                // 2. Check if they have a particular attribute
+                                // 3. Check that the attribute has the correct value
+
+                                // The easy way:
+                                function getElementsByAttribute(att, val){
+                                    return document.querySelectorAll('[' + att + '=' + val + ']');
+                                } // document.querySelectorAll('[class=post]');
+
+                                // The long and logical way
+                                function getElementsByAttribute(attribute, value){
+                                    var all = document.getElementsByTagName('*'); // All the elements
+                                    var found = [];
+
+                                    for (var i = 0; i &lt; all.length; i++) {
+                                        element = all[i];
+                                        if(all[i].getAttribute(atribute) === value){
+                                            found.push(all[i]);
+                                        }
+                                    }
+                                    return found;
+                                }
+                            </code>
+                        </pre>
+                    </div>
+                    <div id="some-common-events" class="post">
+                        <h2>Some Common Events</h2>
+                        <ul>
+                            <li><strong>click</strong> : the user clicks</li>
+                            <li><strong>resize</strong> : the user resizes the document</li>
+                            <li><strong>keydown, keypress, keyup</strong> : the user interacts with the keyboard</li>
+                            <li><strong>mouseover</strong> : mouse is moved over an element</li>
+                            <li><strong>load</strong> : a resource has finished loading</li>
+                        </ul>
+                    </div>
+                    <!-- function getElementsByAttribute('class', 'post'){
+                            return document.querySelectorAll('[' + att + '=' + val + ']');
+                        } -->
+
+
                 </div>
 
                 <!-- Right Menu bar -->
