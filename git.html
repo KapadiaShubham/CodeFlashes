@@ -25,7 +25,7 @@
     <!-- Our Custom CSS -->
     <link rel="stylesheet" href="css/style.css" type="text/css">
     <link rel="stylesheet" href="css/fontawesome-all.css" type="text/css">
-    <link rel="stylesheet" href="prism/prism.css" type="text/css">
+    <link rel="stylesheet" href="prism/prism-Markup-CSS-Clike-JS-PowerShell-Python-Sass-Scss-PHP-Git-Copy-Download-LineNum-CommandLine.css" type="text/css">
     <!-- Favicons -->
     <link rel="apple-touch-icon" href="/docs/5.0/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
     <link rel="icon" href="/docs/5.0/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
@@ -202,7 +202,7 @@ images/ccpp2.jpeg
 
                         </ul>
                         <form class="d-flex">
-                            <input id="mySearch" class="form-control me-2" type="text" placeholder="Search for C/C++" onkeyup="myFunction()" title="Type in a category">
+                            <input id="mySearch" class="form-control me-2" type="text" placeholder="Search for Git" onkeyup="myFunction()" title="Type in a category">
                             <button class="btn btn-outline-success" type="submit">Search</button>
                         </form>
                     </div>
@@ -214,121 +214,9 @@ images/ccpp2.jpeg
                 <!-- Main Content -->
 
                 <div class="main-content">
-                    <div id="get-post-delete-http-requests" class="post">
-                        <h2>Functions For File I/O In C Language</h2>
-                        <div>
-                            <ul>
-                                <li><strong>r</strong> : opens a file for reading.</li>
-                                <li><strong>w</strong> : opens a file for writing. It can also create a new file.</li>
-                                <li><strong>a</strong> : opens a file&nbsp;for appending.</li>
-                                <li><strong>r+</strong> : opens a file for both reading and writing but cannot create a new file.</li>
-                                <li><strong>w+</strong> : opens a file for both reading and writing.</li>
-                            </ul>
-                            <h4>Basic Syntax</h4>
-                            <pre>
-                                <code class="language-c">
-                                    #include &lt;stdio.h&gt;
-                                    #include &lt;stdlib.h&gt;
-                                    int main()
-                                    {
-                                        FILE *ptr = NULL; // necessary
-                                        char string[64] = "This content was produced by Tutorial64.c";
-                                    
-                                        // ****** Reading a file ******
-                                        // ptr = fopen("myfile.txt", "r");
-                                        // fscanf(ptr, "%s", string);
-                                        // printf("The content of this file has %s\n",string );
-                                    
-                                        // ****** Writing a file ******
-                                        ptr = fopen("myfile.txt", "a");
-                                        fprintf(ptr, "%s", string);
-                                    
-                                        return 0;
-                                    }
-                                        
-                                </code>
-                            </pre>
-                            <h4>Opening a File: <em>fopen</em></h4>
-                            <pre>
-                                <code class="language-c">
-                                    // To Open a File
-                                    // ptr = fopen(“file_location”,”mode”);  // Syntax
-                                    ptr = fopen(“D:\\file.txt”,”w”);
-                                </code>
-                            </pre>
-                            <h4>Closing a File: <em>fclose</em></h4>
-                            <pre>
-                                <code class="language-c">
-                                    // To Close a File
-                                    fclose(ptr);  
-                                    // same pointer name 'ptr' which was used for fopen
-                                </code>
-                            </pre>
-                            <h4>Reading a File: <em>fscanf</em></h4>
-                            <pre>
-                                <code class="language-c">
-                                    ptr = fopen(“D:\\file.txt”,”r”);
-                                    char str[128] = "Welcome to code with Harry";
-                                    fscanf(ptr, "%s", str);
-                                    printf("%s",str );
-                                </code>
-                            </pre>
-                            <h4>Writing to a File: <em>fprintf</em></h4>
-                            <pre>
-                                <code class="language-c">
-                                    char str[128] = "Empty";
-                                    ptr = fopen(“D:\\file.txt”,”w”);
-                                    fprintf(ptr, "%s", str);
-                                </code>
-                            </pre>
-                            <h4>Basic Syntax</h4>
-                            <pre>
-                                <code class="language-c">
-                                        #include &lt;stdio.h&gt;
-                                        int main()
-                                        {
-                                            FILE *ptr = NULL; // necessary
-                                            ptr = fopen("myfile.txt", "r+");
-                                            // char * c = fgetc(ptr);
-                                            // printf("The character I read was %c\n", c );
-                                            // c = fgetc(ptr);
-                                            // printf("The character I read was %c\n", c );
-                                        
-                                        
-                                            char str[4];
-                                            fgets(str, 5, ptr);
-                                            printf("The string is %s\n", str);
-                                        
-                                            // fputc('o',ptr);
-                                            // fputs("this is harry",ptr);
-                                        
-                                        
-                                        
-                                            fclose(ptr);
-                                            return 0;
-                                        }
-                                </code>
-                            </pre>
-                            <h4>Write <strong>characters</strong> to the file: <em>fputc</em></h4>
-                            <pre>
-                                <code class="language-c">
-                                    // type fputc(‘character’,file_pointer); // Syntax
-                                    Int fputc(‘a’,ptr);
-                                </code>
-                            </pre>
-                            <h4><strong>ASCII</strong> Table</h4>
-                            <div class="ascii-buttons">
-                                <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-                                    <button id="dec" type="button" class="btn btn-danger">Dec</button>
-                                    <button id="oct" type="button" class="btn btn-warning">Oct</button>
-                                    <button id="hex" type="button" class="btn btn-success">Hex</button>
-                                </div>
-                            </div>
-                            <div id="ascii-table">
+                    <div id="initialize-git-in-a-folder-and-make-a-branch" class="post">
+                        <h2>Initialize Git in a Folder</h2>
 
-                            </div>
-
-                        </div>
                     </div>
                 </div>
 
@@ -336,8 +224,8 @@ images/ccpp2.jpeg
                 <div class="left">
                     <h2>Table of Contents</h2>
                     <ul id="myMenu">
-                        <li><a href="#">HTML</a></li>
-                        <li><a href="#">CSS</a></li>
+                        <li><a href="#">Git-Terminal</a></li>
+                        <li><a href="#">GitHub Web</a></li>
                     </ul>
                 </div>
             </div>
@@ -363,7 +251,7 @@ images/ccpp2.jpeg
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 
     <!-- My JS -->
-    <script src="prism/prism-space-copy.js"></script>
+    <script src="prism/prism-Markup-CSS-Clike-JS-PowerShell-Python-Sass-Scss-PHP-Git-Copy-Download-LineNum-CommandLine.js"></script>
     <script src="myapp.js"></script>
     <script src="asciiTable.js"></script>
 
