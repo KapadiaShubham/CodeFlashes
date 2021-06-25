@@ -272,14 +272,53 @@ images/ccpp2.jpeg
                         </pre>
                     </div>
                     <div id="some-common-events" class="post">
-                        <h2>Some Common Events</h2>
+                        <h2>Event Listeners</h2>
+                        <h4>Some Common Events</h4>
                         <ul>
-                            <li><strong>click</strong> : the user clicks</li>
-                            <li><strong>resize</strong> : the user resizes the document</li>
-                            <li><strong>keydown, keypress, keyup</strong> : the user interacts with the keyboard</li>
-                            <li><strong>mouseover</strong> : mouse is moved over an element</li>
-                            <li><strong>load</strong> : a resource has finished loading</li>
+                            <li><strong class="text-warning">click</strong> : the user clicks</li>
+                            <li><strong class="text-primary">resize</strong> : the user resizes the document</li>
+                            <li><strong class="text-danger">keydown, keypress, keyup</strong> : the user interacts with the keyboard</li>
+                            <li><strong class="text-warning">mouseover</strong> : mouse is moved over an element</li>
+                            <li><strong class="text-primary">load</strong> : a resource has finished loading</li>
                         </ul>
+                        <h4>CallBack for Event Listeners</h4>
+                        <pre>
+                            <code class="language-javascript">
+                                // Syntax
+                                window.addEventListener('load', function(event){
+                                    console.log('All resources finished loading!');
+                                })
+                                // Example-1
+                                document.getElementsById('button-1 or someID').addEventListener('click', function(){
+                                    console.log('you clicked the button!');
+                                })
+                                // Example-2
+                                document.getElementsById('button-2').addEventListener('mouseover', function(){
+                                    document.getElementsById('button-2').innerText = 'you hovered over me!';
+                                })
+                                // Example-3 Toggle theme by button click
+                                // Make sure - you should have a css ready for each element as a child of 'theme2' class
+                                // So now we have to add that class to our body tag, when the button is clicked
+                                doucument.getElementById('theme-button').addEventListener('click', function(){
+                                    document.body.classList.toggle('theme2');
+                                });
+                            </code>
+                        </pre>
+                        <h4>Create your own Custom Event</h4>
+                        <pre>
+                            <code class="language-javascript">
+                                // Let's create an event called 'timeEvent' and have it call a function 'stateTime'
+                                document.body.addEventListener('load', stateTime);
+                                function stateTime(e) {
+                                    alert(e);
+                                }
+                                // Now, let's create a new custion event object
+                                var myEvent = new CustomEvent('timeEvent', {
+                                    'detail' : new Date();
+                                });
+                                // Now go to Consone and type in: document.body.dispatchEvent(myEvent);
+                            </code>
+                        </pre>
                     </div>
                     <!-- function getElementsByAttribute('class', 'post'){
                             return document.querySelectorAll('[' + att + '=' + val + ']');

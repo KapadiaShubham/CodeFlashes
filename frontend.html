@@ -210,7 +210,6 @@ images/ccpp2.jpeg
 
             <div class="Mycontainer">
                 <!-- Main Content -->
-
                 <div class="main-content">
                     <div id="get-post-delete-http-requests" class="post">
                         <h2>HTTP methods: GET, POST and DELETE</h2>
@@ -249,8 +248,8 @@ images/ccpp2.jpeg
 
                     <div id="Standard-AJAX-request" class="post">
                         <h2>Standard AJAX request</h2>
-                        <div class="flex">
-                            <pre><code class="language-javascript">
+                        <pre>
+                            <code class="language-javascript">
                                 // Standard AJAX request to get a response from an API
                                 var a = new XMLHttpRequest();
                                 a.addEventListener('readystatechange', function(r) {
@@ -259,10 +258,11 @@ images/ccpp2.jpeg
                                         console.log(r.target.response);
                                     }
                                 });
-                                a.open('GET', 'https://api.github.com/users/KapadiaShubham');
+                                a.open('GET', 'https://api.github.com/users/KapadiaShubham', true);
                                 a.send();
-                            </code></pre>
-                        </div>
+                            </code>
+                        </pre>
+
                     </div>
                     <div id="promises" class="post">
                         <h2>Promise states</h2>
@@ -272,8 +272,8 @@ images/ccpp2.jpeg
                     </div>
                     <div id="fetch-calling-API-promise-method" class="post">
                         <h2>fetch() - Calling an API by Promises method</h2>
-                        <div class="flex">
-                            <pre><code class="language-javascript">
+                        <pre>
+                            <code class="language-javascript">
                                 // Fetch API - a modern way
                                 fetch('https://api.github.com/users/KapadiaShubham')
                                     .then(function(r) {
@@ -283,8 +283,111 @@ images/ccpp2.jpeg
                                     .then(function(j) {
                                         console.log(j);
                                     })
-                            </code></pre>
+                            </code>
+                        </pre>
+                    </div>
+                    <div id="calling-an-API-example" class="post">
+                        <h2>Calling an API Example</h2>
+                        <p>
+                            <a class="btn btn-primary" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">
+                                HTML
+                            </a>
+                            <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">
+                                CSS
+                            </button>
+                        </p>
+                        <div class="row">
+                            <div class="col">
+                                <div class="collapse multi-collapse" id="multiCollapseExample1">
+                                    <div class="card card-body">
+                                        <pre>
+                                            <code class="language-html">
+                                                &lt;html&gt;&#10;&lt;head&gt;&#10;    &lt;title&gt;JSON GitHub Activity&lt;/title&gt;&#10;&lt;/head&gt;&#10;&#10;&lt;body&gt;&#10;    &lt;div class=&quot;container&quot;&gt;&#10;        &lt;h1&gt;GitHub Profile Hunt&lt;/h1&gt;&#10;        &lt;h3 id=&quot;loader&quot;&gt;Loading...&lt;/h3&gt;&#10;        &lt;div&gt;&lt;img id=&quot;avatar&quot; src=&quot;&quot; /&gt;&lt;/div&gt;&#10;        &lt;div id=&quot;name&quot;&gt;&lt;/div&gt;&#10;        &lt;div id=&quot;username&quot;&gt;&lt;/div&gt;&#10;        &lt;div id=&quot;location&quot; &GreaterEqual;&lt;/div&gt;&#10;            &lt;div id=&quot;bio&quot;&gt;&lt;/div&gt;&#10;            &lt;div&gt;&#10;                &lt;div id=&quot;count&quot;&gt;&lt;/div&gt;&#10;                &lt;ul id=&quot;list&quot;&gt;&#10;                &lt;/ul&gt;&#10;            &lt;/div&gt;&#10;            &lt;input. type=&quot;text&quot; placeholder=&quot;GitHub username&quot;&gt;&#10;                &lt;button&gt;Get GitHub Profile&lt;/button&gt;&#10;        &lt;/div&gt;&#10;        &lt;script src=&quot;jsonhandling.js&quot;&gt;&lt;/script&gt;&#10;&lt;/body&gt;&#10;&#10;&lt;/html&gt;
+                                            </code>
+                                        </pre>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="collapse multi-collapse" id="multiCollapseExample2">
+                                    <div class="card card-body">
+                                        <pre>
+                                            <code class="language-css">
+                                                container {
+                                                    text-align: center;
+                                                }
+                                                img {
+                                                    margin: 5px;
+                                                    width: 20px;
+                                                }
+                                                #avatar {
+                                                    width: 150px;
+                                                }
+                                                ul {
+                                                    padding: 0;
+                                                    display: flex;
+                                                    justify-content: center;
+                                                    list-style-type: none;
+                                                }
+                                            </code>
+                                        </pre>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+                        <pre>
+                            <code class="language-javascript">
+                                var response = null;
+var followers = null;
+
+document.getElementsByTagName('button')[0].addEventListener('click', function(r) {
+    getUser(document.getElementsByTagName('input')[0].value);
+});
+
+function getUser(name) {
+    fetch('https://api.github.com/users/' + name)
+        .then(function(r) {
+            return r.json();
+        })
+        .then(function(j) {
+            response = j;
+            assignValues();
+            getFollowers(j.followers_url);
+        })
+}
+
+function assignValues() {
+    document.getElementById('loader').style = 'display: none';
+
+    document.getElementById('avatar').src = response.avatar_url;
+    document.getElementById('name').innerText = response.name;
+    document.getElementById('username').innerText = response.login;
+    document.getElementById('location').innerText = response.location;
+    document.getElementById('bio').innerText = response.bio;
+    document.getElementById('count').innerText = 'Followers:' + response.followers;
+}
+
+function getFollowers(url) {
+    fetch(url)
+        .then(function(r) {
+            return r.json();
+        })
+        .then(function(f) {
+            followers = f;
+            console.log(f);
+            listFollowers();
+        });
+};
+
+function listFollowers() {
+    followers.forEach(function(f) {
+        var li = document.createElement('li');
+        li.innerHTML = '<a href = "' + f.html_url + '">' + '<img src=' + f.avatar_url + '"alt="' + f.login + '"/>' + '"</a>';
+        document.getElementById('list').appendChild(li);
+    });
+}
+                            </code>
+                        </pre>
                     </div>
 
                     <div id="trial" class="post">
