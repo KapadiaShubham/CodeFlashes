@@ -214,18 +214,39 @@ images/ccpp2.jpeg
                 <!-- Main Content -->
 
                 <div class="main-content">
-                    <div id="get-post-delete-http-requests" class="post">
-                        <h2>Functions For File I/O In C Language</h2>
-                        <div>
-                            <ul>
-                                <li><strong>r</strong> : opens a file for reading.</li>
-                                <li><strong>w</strong> : opens a file for writing. It can also create a new file.</li>
-                                <li><strong>a</strong> : opens a file&nbsp;for appending.</li>
-                                <li><strong>r+</strong> : opens a file for both reading and writing but cannot create a new file.</li>
-                                <li><strong>w+</strong> : opens a file for both reading and writing.</li>
-                            </ul>
-                            <h4>Basic Syntax</h4>
-                            <pre>
+                    <div class="post">
+                        <h4><strong>ASCII</strong> Table</h4>
+                        <div class="ascii-buttons" style="display:none">
+                            <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                                <button id="dec" type="button" class="btn btn-danger">Dec</button>
+                                <button id="oct" type="button" class="btn btn-warning">Oct</button>
+                                <button id="hex" type="button" class="btn btn-success">Hex</button>
+                            </div>
+                        </div>
+                        <div id="ascii-table">
+
+                        </div>
+                    </div>
+                    <div class="post">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                Code With Harry
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <h2>Functions For File I/O In C Language</h2>
+                                    <div>
+                                        <ul>
+                                            <li><strong>r</strong> : opens a file for reading.</li>
+                                            <li><strong>w</strong> : opens a file for writing. It can also create a new file.</li>
+                                            <li><strong>a</strong> : opens a file&nbsp;for appending.</li>
+                                            <li><strong>r+</strong> : opens a file for both reading and writing but cannot create a new file.</li>
+                                            <li><strong>w+</strong> : opens a file for both reading and writing.</li>
+                                        </ul>
+                                        <h4>Basic Syntax</h4>
+                                        <pre>
                                 <code class="language-c">
                                     #include &lt;stdio.h&gt;
                                     #include &lt;stdlib.h&gt;
@@ -247,24 +268,24 @@ images/ccpp2.jpeg
                                     }   
                                 </code>
                             </pre>
-                            <h4>Opening a File: <em>fopen</em></h4>
-                            <pre>
+                                        <h4>Opening a File: <em>fopen</em></h4>
+                                        <pre>
                                 <code class="language-c">
                                     // To Open a File
                                     // ptr = fopen(“file_location”,”mode”);  // Syntax
                                     ptr = fopen(“D:\\file.txt”,”w”);
                                 </code>
                             </pre>
-                            <h4>Closing a File: <em>fclose</em></h4>
-                            <pre>
+                                        <h4>Closing a File: <em>fclose</em></h4>
+                                        <pre>
                                 <code class="language-c">
                                     // To Close a File
                                     fclose(ptr);  
                                     // same pointer name 'ptr' which was used for fopen
                                 </code>
                             </pre>
-                            <h4>Reading a File: <em>fscanf</em></h4>
-                            <pre>
+                                        <h4>Reading a File: <em>fscanf</em></h4>
+                                        <pre>
                                 <code class="language-c">
                                     ptr = fopen(“D:\\file.txt”,”r”);
                                     char str[128] = "Welcome to code with Harry";
@@ -272,16 +293,16 @@ images/ccpp2.jpeg
                                     printf("%s",str );
                                 </code>
                             </pre>
-                            <h4>Writing to a File: <em>fprintf</em></h4>
-                            <pre>
+                                        <h4>Writing to a File: <em>fprintf</em></h4>
+                                        <pre>
                                 <code class="language-c">
                                     char str[128] = "Empty";
                                     ptr = fopen(“D:\\file.txt”,”w”);
                                     fprintf(ptr, "%s", str);
                                 </code>
                             </pre>
-                            <h4>Basic Syntax</h4>
-                            <pre>
+                                        <h4>Basic Syntax</h4>
+                                        <pre>
                                 <code class="language-c">
                                         #include &lt;stdio.h&gt;
                                         int main()
@@ -308,25 +329,17 @@ images/ccpp2.jpeg
                                         }
                                 </code>
                             </pre>
-                            <h4>Write <strong>characters</strong> to the file: <em>fputc</em></h4>
-                            <pre>
+                                        <h4>Write <strong>characters</strong> to the file: <em>fputc</em></h4>
+                                        <pre>
                                 <code class="language-c">
                                     // type fputc(‘character’,file_pointer); // Syntax
                                     Int fputc(‘a’,ptr);
                                 </code>
                             </pre>
-                            <h4><strong>ASCII</strong> Table</h4>
-                            <div class="ascii-buttons">
-                                <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-                                    <button id="dec" type="button" class="btn btn-danger">Dec</button>
-                                    <button id="oct" type="button" class="btn btn-warning">Oct</button>
-                                    <button id="hex" type="button" class="btn btn-success">Hex</button>
+
+                                    </div>
                                 </div>
                             </div>
-                            <div id="ascii-table">
-
-                            </div>
-
                         </div>
                     </div>
                 </div>
@@ -344,10 +357,6 @@ images/ccpp2.jpeg
 
 
     </div>
-
-
-
-
 
     <!-- Optional JavaScript; choose one of the two! -->
     <!-- Option 1: Bootstrap Bundle with Popper -->

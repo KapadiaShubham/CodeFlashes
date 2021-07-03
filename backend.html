@@ -271,7 +271,7 @@ images/ccpp2.jpeg
                             </code>
                         </pre>
                     </div>
-                    <div id="some-common-events" class="post">
+                    <div id="event-listeners" class="post">
                         <h2>Event Listeners</h2>
                         <h4>Some Common Events</h4>
                         <ul>
@@ -316,13 +316,73 @@ images/ccpp2.jpeg
                                 var myEvent = new CustomEvent('timeEvent', {
                                     'detail' : new Date();
                                 });
-                                // Now go to Consone and type in: document.body.dispatchEvent(myEvent);
+                                // Now go to Console and type in: document.body.dispatchEvent(myEvent);
                             </code>
                         </pre>
                     </div>
                     <!-- function getElementsByAttribute('class', 'post'){
                             return document.querySelectorAll('[' + att + '=' + val + ']');
                         } -->
+                    <div id="scope-and-this">
+                        <h2>Scope and 'this' variable</h2>
+                        <h4>The <code><em>call</em></code> method</h4>
+                        <pre>
+                            <code class="language-javascript">
+                                function greet(thing) {
+                                    console.log(this + " says greetings, " + thing);
+                                }
+                                greet.call("Cami", "earthlings")
+                                //=> Cami says greetings, earthlings
+
+                                // Another Example
+                                var person = {
+                                    name: "Samantha",
+                                    greet: function(thing) {
+                                        console.log(this.name + " says greetings, " + thing);
+                                    }
+                                }
+                                person.greet.call(person, 'neighbor');
+                                // Samantha says greetings, neighbor
+                            </code>
+                        </pre>
+                        <h4>The <code><em>apply</em></code> method</h4>
+                        <pre>
+                            <code class="language-javascript">
+                                function greet(thing1, thing2) {
+                                    console.log(this + " says greetings, " + thing1);
+                                    console.log("But " + thing2 + " doesn't like " + this);
+                                }
+                                
+                                // How we do in 'call' method
+                                greet.call('Samantha', 'Maya', 'Angelina');
+                                // Samantha says greetings, Maya
+                                // But Angelina doesn't like Samantha
+                                
+                                // Same thing for 'apply' method
+                                greet.apply('Samantha', ['Maya', 'Angelina']);
+                                // Samantha says greetings, Maya
+                                // But Angelina doesn't like Samantha
+                            </code>
+                        </pre> Difference between <em>call</em> and <em>apply</em> is that
+                        <ul>
+                            <li>For <em><span class='text-danger'>c</span>all</em> you need to <span class='text-danger'>c</span>ount your parameters.</li>
+                            <li>But, for <em><span class='text-danger'>a</span>pply</em> you have and <span class='text-danger'>a</span>rray.</li>
+                        </ul>
+                        <h4>The <code><em>bind</em></code> method</h4>
+                        <pre>
+                            <code class="language-javascript">
+                                function greet(thing1, thing2) {
+                                    console.log(this + " says greetings, " + thing1);
+                                    console.log("But " + thing2 + " doesn't like " + this);
+                                }
+                                var boundGreeting = greet.bind('Noah'); // the value for 'this' becomes 'Noah'
+                                boundGreeting('Christian', 'Ben');
+                                // Noah says greetings, Christian
+                                // But Ben doesn't like Noah
+                            </code>
+                        </pre>
+                    </div>
+
 
 
                 </div>
