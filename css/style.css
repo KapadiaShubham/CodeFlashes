@@ -177,7 +177,14 @@ a.download {
 ----------------------------------------------------- */
 @media (max-width: 768px) {
   #sidebar {
-    display: none; } }
+    display: none; }
+  .dropdown-toggle::after {
+    top: auto;
+    bottom: 10px;
+    right: 50%;
+    -webkit-transform: translateX(50%);
+    -ms-transform: translateX(50%);
+    transform: translateX(50%); } }
 
 a,
 a:hover,
@@ -244,22 +251,28 @@ ul ul a {
   padding: 11px;
   border: 1px solid #ddd; }
 
-.post p {
-  color: black; }
-
-.post .flex {
-  display: flex; }
-  .post .flex .leftFlex-80 {
-    flex: 80%; }
-  .post .flex .rightFlex-20 {
-    flex: 20%; }
-  .post .flex .leftFlex-75 {
-    flex: 75%; }
-  .post .flex .rightFlex-25 {
-    flex: 25%; }
-
-.post pre {
-  max-height: 65vh; }
+.post {
+  max-width: 80vw; }
+  .post p {
+    color: black; }
+  .post .flex {
+    display: flex; }
+    .post .flex .leftFlex-80 {
+      flex: 80%; }
+    .post .flex .rightFlex-20 {
+      flex: 20%; }
+    .post .flex .leftFlex-75 {
+      flex: 75%; }
+    .post .flex .rightFlex-25 {
+      flex: 25%; }
+  .post pre {
+    max-height: 65vh; }
+  .post img {
+    max-width: 500px;
+    max-height: 253px; }
+  .post .flex {
+    justify-content: center;
+    align-items: center; }
 
 table.wikitable {
   margin: 1em 0;
@@ -304,3 +317,6 @@ table {
 
 .ch-element {
   color: white; }
+
+.LINK {
+  cursor: pointer; }

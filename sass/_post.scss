@@ -1,4 +1,5 @@
 .post {
+    max-width: 80vw;
     p {
         color: black;
         // display: inline-block;
@@ -20,5 +21,13 @@
     }
     pre {
         max-height: 65vh;
+    }
+    img {
+        max-width: 500px;
+        max-height: 253px;
+    }
+    .flex {
+        justify-content: center;
+        align-items: center;
     }
 }

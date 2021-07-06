@@ -10,14 +10,14 @@
         // text-align: center;
         // margin-left: -80px !important;
     }
-    // .dropdown-toggle::after {
-    //     top: auto;
-    //     bottom: 10px;
-    //     right: 50%;
-    //     -webkit-transform: translateX(50%);
-    //     -ms-transform: translateX(50%);
-    //     transform: translateX(50%);
-    // }
+    .dropdown-toggle::after {
+        top: auto;
+        bottom: 10px;
+        right: 50%;
+        -webkit-transform: translateX(50%);
+        -ms-transform: translateX(50%);
+        transform: translateX(50%);
+    }
     // #sidebar.active {
     //     margin-left: 0 !important;
     // }
